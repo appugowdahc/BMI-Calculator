@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Todo List</title>
+    </head>
+    <body>
+        <form action="">
+            <button id="completed">Completed</button>
+            <button id="pending">pending</button>
+            <div class="data"></div>
+        </form>
+        <script>
+            fetch('https://jsonplaceholder.typicode.com/todos').then(response=>response.json())
+    
+            .then(data=> {
+                console.log(data.length)
+                for(let i =0;i<200;i++){
+                    if(data[i].completed ===true){
+                        const para= document.createElement('p');
+                        var dataTitle = data[i].title
+                        para.textContent = dataTitle
+                        
+                    }
+                }
+            })
+        </script>
+      
+    </body>
+    
+</html>
